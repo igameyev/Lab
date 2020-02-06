@@ -1,0 +1,22 @@
+const text = "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit...";
+
+const textEntering = function(){
+	let counter = 0,
+  	typeArea = document.getElementsByTagName("div")[0] ? 
+    document.getElementsByTagName("div")[0] : document.createElement("div"),
+    timer = setInterval (function() 
+    {
+    	while (counter < text.length){
+        let paragraph = document.createElement("p");
+        paragraph.style = "display: inline;";
+        paragraph.appendChild(document.createTextNode(text[counter]));
+        typeArea.appendChild(paragraph);
+        counter++;
+        break;
+			}
+    }, 200);
+	console.log(typeArea)
+	return timer;
+}
+
+textEntering();
